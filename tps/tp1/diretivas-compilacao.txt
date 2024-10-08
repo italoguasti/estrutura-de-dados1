@@ -1,0 +1,20 @@
+// tp1 (sem Allegro)
+gcc -c tp.c -Wall
+gcc -c automato.c -Wall
+gcc automato.o tp.o -o exe
+./exe < entrada.txt
+
+// valgrind para calcular leaks de memória
+valgrind --leak-check=full -s ./exe < entrada.txt
+
+------------------------------------------------------------
+
+// tp1-allegro (com Allegro)
+
+gcc -c tp.c -Wall
+gcc -c automato.c -Wall
+gcc tp.c automato.c -o jogo_da_vida -lallegro -lallegro_primitives
+./exe < entrada.txt
+
+//valgrind para calcular leaks de memória
+valgrind --leak-check=full -s ./exe < entrada.txt
